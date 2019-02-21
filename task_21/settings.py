@@ -26,7 +26,7 @@ SECRET_KEY = 'tnvhv(22@t1#1!f9$&6gl#0-&9(symuxb$=x_2h6zkg*tdi4iy'
 
 DEBUG = False #to hide the errors from user
 
-ALLOWED_HOSTS = ['127.0.0.1', '157.230.17.232']
+ALLOWED_HOSTS = ['127.0.0.1', '138.68.87.232']
 
 
 # Application definition
@@ -95,7 +95,7 @@ else:
         'ENGINE': 'django.db.backends.postgressql_poscopg2',
         'NAME': 'django',
         'USER': 'django',
-        'PASSWORD': '3ce8907b8f9aa85f7760001f322d2e8b',
+        'PASSWORD': '4d010087374bf1b96cc90034417455cb',
         'HOST': 'localhost',
         'PORT': '',
     }
