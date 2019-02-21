@@ -23,9 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'tnvhv(22@t1#1!f9$&6gl#0-&9(symuxb$=x_2h6zkg*tdi4iy'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
-ALLOWED_HOSTS = []
+DEBUG = False #to hide the errors from user
+
+ALLOWED_HOSTS = ['127.0.0.1', '157.230.17.232']
 
 
 # Application definition
@@ -80,11 +81,23 @@ WSGI_APPLICATION = 'task_21.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+else:
+    DATABASES = {
 
-DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgressql_poscopg2',
+        'NAME': 'django',
+        'USER': 'django',
+        'PASSWORD': '3ce8907b8f9aa85f7760001f322d2e8b',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
